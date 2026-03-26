@@ -3,14 +3,13 @@ async function loadGrid() {
   const data = await res.json();
 
   const grid = document.getElementById("species-grid");
-
   const list = document.createElement("ul");
 
   list.innerHTML = data.map(s => `
-    <li>
+    <li id="species-${s.slug}">
       <a href="/species/${s.slug}" onclick="loadSpecies('${s.slug}'); return false;">
         <img src="/images/${s.slug}.jpg" alt="${s.name}">
-        <p>${s.name}</p>
+        <h2>${s.name}</h2>
         <p>Redlist: ${s.redlist}</p>
       </a>
     </li>
@@ -18,6 +17,8 @@ async function loadGrid() {
 
   grid.innerHTML = "";
   grid.appendChild(list);
+  document.title = "BETTA";
+  document.getElementById("title").innerText = "BETTA";
 }
 
 async function loadSpecies(slug) {
@@ -29,7 +30,6 @@ async function loadSpecies(slug) {
   const s = await res.json();
 
   const grid = document.getElementById("species-grid");
-
   grid.innerHTML = `
     <div class="detail">
       <img src="/images/${s.slug}.jpg" alt="${s.name}">
@@ -45,16 +45,19 @@ async function loadSpecies(slug) {
     </div>
   `;
 
-  document.title = `BETTA ${s.name}`;
+  document.title = s.name;
   document.getElementById("title").innerText = s.name;
-
   history.pushState({}, "", `/species/${slug}`);
 }
 
-// Handle browser back button
+// Handle browser back/forward
 window.addEventListener("popstate", () => {
-  loadGrid();
+  const path = window.location.pathname;
+  if (path.startsWith("/species/")) {
+    loadSpecies(path.split("/")[2]);
+  } else {
+    loadGrid();
+  }
 });
 
-// Initial load
 loadGrid();
