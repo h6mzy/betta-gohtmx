@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+#species-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.species-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.species-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #species-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
