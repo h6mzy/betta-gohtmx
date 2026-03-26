@@ -34,38 +34,42 @@ func loadSpecies() {
 		log.Fatal(err)
 	}
 	defer file.Close()
-
 	json.NewDecoder(file).Decode(&speciesData)
 }
 
+// API endpoints
 func apiAllSpecies(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(speciesData)
 }
 
 func apiSingleSpecies(w http.ResponseWriter, r *http.Request) {
-	id := strings.TrimPrefix(r.URL.Path, "/api/species/")
-
+	slug := strings.TrimPrefix(r.URL.Path, "/api/species/")
 	for _, s := range speciesData {
-		if s.Slug == id {
+		if s.Slug == slug {
 			w.Header().Set("Content-Type", "application/json")
 			json.NewEncoder(w).Encode(s)
 			return
 		}
 	}
-
 	http.NotFound(w, r)
 }
 
 func main() {
 	loadSpecies()
 
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/", fs)
+	// Serve static files (HTML, JS, images)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
+	// SPA entry point
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "static/index.html")
+	})
+
+	// API routes
+	http.HandleFunc("/api/species/", apiSingleSpecies) // must be before /api/species
 	http.HandleFunc("/api/species", apiAllSpecies)
-	http.HandleFunc("/api/species/", apiSingleSpecies)
 
-	log.Println("Server at :8080")
+	log.Println("Server running at :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
