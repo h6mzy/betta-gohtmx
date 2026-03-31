@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BETTAGO</title>
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>BETTAGO</h1>
+
+  <!-- Search -->
+  <input 
+    type="text"
+    name="q"
+    autocomplete="off"
+    placeholder="Search species..."
+    hx-get="/api/species"
+    hx-trigger="keyup changed delay:300ms"
+    hx-target="#species-list"
+    hx-swap="innerHTML">
+
+  <!-- Species list -->
+  <div id="species-list">
+    {{template "home" .}}
+  </div>
+
+  <hr>
+
+  <!-- Species detail -->
+  <div id="species-detail">
+    {{if .CurrentSpecies}}
+      {{template "species_partial" .CurrentSpecies}}
+    {{end}}
+  </div>
+</body>
+</html>

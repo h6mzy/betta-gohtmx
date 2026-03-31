@@ -1,6 +1,7 @@
 :root {
   --font-family: "Courier New", Courier, monospace;
   --text-color: #bba;
+  --text-weak: #887;
   --bg-color: #221;
   --border-color: #443;
   --radius: 0.5rem;
@@ -49,7 +50,7 @@ a {
   text-decoration: none;
 }
 
-button, select {
+button, input, select {
   all: unset;
   box-sizing: border-box;
   cursor: pointer;
@@ -57,11 +58,16 @@ button, select {
   align-items: center;
   justify-content: center;
   font: inherit;
+  background-color: inherit;
   color: inherit;
   border: 1px solid var(--border-color);
   padding: var(--gap-sm) var(--gap);
   border-radius: var(--radius);
   transition: all .3s ease-out;
+}
+
+input::placeholder {
+  color: var(--text-weak);
 }
 
 button:hover, select:hover {

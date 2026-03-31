@@ -1,0 +1,12 @@
+{{define "home"}}
+{{range .Species}}
+<div>
+  <a hx-get="/species/{{.Slug}}"
+     hx-target="#species-detail"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     {{.Name}}
+  </a> — {{.Group}} — {{.Redlist}}
+</div>
+{{end}}
+{{end}}

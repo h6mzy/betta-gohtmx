@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "splendens",
+    "group": "splendens group",
+    "name": "Betta splendens",
+    "scientific": "Betta splendens",
+    "info": "Wild ancestor of domestic fighting fish, native to central Thailand floodplains.",
+    "habitat": "Rice paddies, canals, stagnant shallow waters.",
+    "breeding": "Bubble nester",
+    "captive": "24–28°C, planted aquarium, low current, territorial males.",
+    "redlist": "Vulnerable",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Wild male splendens"
+      }
+    ]
+  },
+  {
+    "slug": "imbellis",
+    "group": "splendens group",
+    "name": "Betta imbellis",
+    "scientific": "Betta imbellis",
+    "info": "Peaceful blackwater species with blue-green iridescence.",
+    "habitat": "Peat swamps and slow blackwater streams.",
+    "breeding": "Bubble nester",
+    "captive": "Soft acidic water, tannins beneficial.",
+    "redlist": "Least Concern",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male imbellis display"
+      }
+    ]
+  },
+  {
+    "slug": "mahachaiensis",
+    "group": "splendens group",
+    "name": "Betta mahachaiensis",
+    "scientific": "Betta mahachaiensis",
+    "info": "Brackish-tolerant species associated with nipa palm habitats.",
+    "habitat": "Coastal nipa swamps.",
+    "breeding": "Bubble nester",
+    "captive": "Slight mineral content beneficial, planted setup.",
+    "redlist": "Endangered",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Wild male mahachaiensis"
+      }
+    ]
+  },
+  {
+    "slug": "siamorientalis",
+    "group": "splendens group",
+    "name": "Betta siamorientalis",
+    "scientific": "Betta siamorientalis",
+    "info": "Eastern Thai species closely related to splendens.",
+    "habitat": "Floodplains and shallow freshwater habitats.",
+    "breeding": "Bubble nester",
+    "captive": "Warm planted low-flow aquarium.",
+    "redlist": "Not Evaluated",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male siamorientalis"
+      }
+    ]
+  },
+  {
+    "slug": "smaragdina",
+    "group": "splendens group",
+    "name": "Betta smaragdina",
+    "scientific": "Betta smaragdina",
+    "info": "Known for strong emerald scaling and northern Thai distribution.",
+    "habitat": "Seasonal pools and rice fields.",
+    "breeding": "Bubble nester",
+    "captive": "Moderate planting and subdued lighting.",
+    "redlist": "Least Concern",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Wild smaragdina male"
+      }
+    ]
+  },
+  {
+    "slug": "pugnax",
+    "group": "pugnax group",
+    "name": "Betta pugnax",
+    "scientific": "Betta pugnax",
+    "info": "Classic paternal mouthbrooder widely distributed in Peninsular Malaysia.",
+    "habitat": "Forest streams and hill waters.",
+    "breeding": "Mouthbrooder",
+    "captive": "Cooler clean water, hiding spaces important.",
+    "redlist": "Least Concern",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male pugnax"
+      }
+    ]
+  },
+  {
+    "slug": "albimarginata",
+    "group": "albimarginata group",
+    "name": "Betta albimarginata",
+    "scientific": "Betta albimarginata",
+    "info": "Tiny mouthbrooder with distinctive white fin margins.",
+    "habitat": "Forest pools and leaf litter streams.",
+    "breeding": "Mouthbrooder",
+    "captive": "Very soft water, gentle setup.",
+    "redlist": "Least Concern",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male albimarginata"
+      }
+    ]
+  },
+  {
+    "slug": "macrostoma",
+    "group": "unimaculata group",
+    "name": "Betta macrostoma",
+    "scientific": "Betta macrostoma",
+    "info": "Large regal mouthbrooder endemic to Brunei.",
+    "habitat": "Clear forest streams.",
+    "breeding": "Mouthbrooder",
+    "captive": "Stable water quality critical.",
+    "redlist": "Vulnerable",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male macrostoma"
+      }
+    ]
+  },
+  {
+    "slug": "coccina",
+    "group": "coccina group",
+    "name": "Betta coccina",
+    "scientific": "Betta coccina",
+    "info": "Small red peat swamp species, highly iconic among blackwater bettas.",
+    "habitat": "Peat swamp forests.",
+    "breeding": "Bubble nester",
+    "captive": "Very soft acidic water, tannins essential.",
+    "redlist": "Near Threatened",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male coccina"
+      }
+    ]
+  },
+  {
+    "slug": "persephone",
+    "group": "coccina group",
+    "name": "Betta persephone",
+    "scientific": "Betta persephone",
+    "info": "Dark miniature peat swamp specialist from Johor.",
+    "habitat": "Acidic peat swamps.",
+    "breeding": "Bubble nester",
+    "captive": "Extremely soft low pH water.",
+    "redlist": "Critically Endangered",
+    "photos": [
+      {
+        "src": "YOUR_IMAGE_URL",
+        "caption": "Male persephone"
+      }
+    ]
+  }
+]

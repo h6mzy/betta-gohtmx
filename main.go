@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -26,51 +28,95 @@ type Species struct {
 	Photos     []Photo `json:"photos"`
 }
 
-var speciesData []Species
+type PageData struct {
+	Species        []Species
+	CurrentSpecies *Species
+}
+
+var speciesList []Species
+var tmpl *template.Template
 
 func loadSpecies() {
-	file, err := os.Open("api/species.json")
+	data, err := os.ReadFile("data/species.json")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-	json.NewDecoder(file).Decode(&speciesData)
+	if err := json.Unmarshal(data, &speciesList); err != nil {
+		log.Fatal(err)
+	}
 }
 
-func apiAllSpecies(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(speciesData)
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	page := PageData{Species: speciesList}
+	tmpl.ExecuteTemplate(w, "layout.html", page)
 }
 
-func apiSingleSpecies(w http.ResponseWriter, r *http.Request) {
-	slug := strings.TrimPrefix(r.URL.Path, "/api/species/")
-	for _, s := range speciesData {
+func speciesHandler(w http.ResponseWriter, r *http.Request) {
+	slug := strings.TrimPrefix(r.URL.Path, "/species/")
+	var current *Species
+	for _, s := range speciesList {
 		if s.Slug == slug {
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(s)
-			return
+			current = &s
+			break
 		}
 	}
-	http.NotFound(w, r)
+	if current == nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	// HTMX partial request
+	if r.Header.Get("HX-Request") == "true" {
+		tmpl.ExecuteTemplate(w, "species_partial", current) // Use template **name**, not filename
+		return
+	}
+
+	// Full page for direct URL
+	page := PageData{
+		Species:        speciesList,
+		CurrentSpecies: current,
+	}
+	tmpl.ExecuteTemplate(w, "layout.html", page)
+}
+
+func apiSpeciesHandler(w http.ResponseWriter, r *http.Request) {
+	query := strings.ToLower(r.URL.Query().Get("q"))
+
+	w.Header().Set("Content-Type", "text/html")
+
+	for _, s := range speciesList {
+		if query == "" ||
+			strings.Contains(strings.ToLower(s.Name), query) ||
+			strings.Contains(strings.ToLower(s.Group), query) ||
+			strings.Contains(strings.ToLower(s.Redlist), query) {
+			fmt.Fprintf(w,
+				`<div>
+					<a hx-get="/species/%s"
+					   hx-target="#species-detail"
+					   hx-swap="innerHTML"
+					   hx-push-url="true">
+					   %s
+					</a> — %s — %s
+				</div>`,
+				s.Slug, s.Name, s.Group, s.Redlist)
+		}
+	}
 }
 
 func main() {
 	loadSpecies()
+	tmpl = template.Must(template.ParseFiles(
+		"templates/layout.html",
+		"templates/home.html",
+		"templates/species_partial.html",
+	))
 
-	// API routes first
-	http.HandleFunc("/api/species/", apiSingleSpecies)
-	http.HandleFunc("/api/species", apiAllSpecies)
+	http.HandleFunc("/", homeHandler)
+	http.HandleFunc("/species/", speciesHandler)
+	http.HandleFunc("/api/species", apiSpeciesHandler)
 
-	// Serve static files
-	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("static/js"))))
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
-	http.Handle("/images/", http.StripPrefix("/images/", http.FileServer(http.Dir("static/images"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	// SPA entry point
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "static/index.html")
-	})
-
-	log.Println("Server running at :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Running on :8080")
+	http.ListenAndServe(":8080", nil)
 }

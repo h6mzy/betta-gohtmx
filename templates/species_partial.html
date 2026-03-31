@@ -1,0 +1,20 @@
+{{define "species_partial"}}
+<div>
+  <a hx-get="/" hx-target="body"
+     hx-push-url="true">← Back to Home</a>
+  <h2>{{.Name}}</h2>
+  <p><strong>Scientific name:</strong> {{.Scientific}}</p>
+  <p><strong>Info:</strong> {{.Info}}</p>
+  <p><strong>Habitat:</strong> {{.Habitat}}</p>
+  <p><strong>Breeding:</strong> {{.Breeding}}</p>
+  <p><strong>Captive care:</strong> {{.Captive}}</p>
+  <p><strong>Red List status:</strong> {{.Redlist}}</p>
+
+  {{range .Photos}}
+    <div>
+      <img src="{{.Src}}" alt="{{.Caption}}" width="200">
+      <p>{{.Caption}}</p>
+    </div>
+  {{end}}
+</div>
+{{end}}
