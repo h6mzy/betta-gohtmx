@@ -1,8 +1,8 @@
 [
   {
     "slug": "splendens",
-    "group": "splendens group",
-    "name": "Betta splendens",
+    "group": "Splendens",
+    "name": "Betta Splendens",
     "scientific": "Betta splendens",
     "info": "Wild ancestor of domestic fighting fish, native to central Thailand floodplains.",
     "habitat": "Rice paddies, canals, stagnant shallow waters.",
@@ -11,15 +11,15 @@
     "redlist": "Vulnerable",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/splendens.webp",
         "caption": "Wild male splendens"
       }
     ]
   },
   {
     "slug": "imbellis",
-    "group": "splendens group",
-    "name": "Betta imbellis",
+    "group": "Splendens",
+    "name": "Betta Imbellis",
     "scientific": "Betta imbellis",
     "info": "Peaceful blackwater species with blue-green iridescence.",
     "habitat": "Peat swamps and slow blackwater streams.",
@@ -28,15 +28,15 @@
     "redlist": "Least Concern",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/imbellis.webp",
         "caption": "Male imbellis display"
       }
     ]
   },
   {
     "slug": "mahachaiensis",
-    "group": "splendens group",
-    "name": "Betta mahachaiensis",
+    "group": "Splendens",
+    "name": "Betta Mahachaiensis",
     "scientific": "Betta mahachaiensis",
     "info": "Brackish-tolerant species associated with nipa palm habitats.",
     "habitat": "Coastal nipa swamps.",
@@ -45,15 +45,15 @@
     "redlist": "Endangered",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/mahachaiensis.webp",
         "caption": "Wild male mahachaiensis"
       }
     ]
   },
   {
     "slug": "siamorientalis",
-    "group": "splendens group",
-    "name": "Betta siamorientalis",
+    "group": "Splendens",
+    "name": "Betta Siamorientalis",
     "scientific": "Betta siamorientalis",
     "info": "Eastern Thai species closely related to splendens.",
     "habitat": "Floodplains and shallow freshwater habitats.",
@@ -62,15 +62,15 @@
     "redlist": "Not Evaluated",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/siamorientalis.webp",
         "caption": "Male siamorientalis"
       }
     ]
   },
   {
     "slug": "smaragdina",
-    "group": "splendens group",
-    "name": "Betta smaragdina",
+    "group": "Splendens",
+    "name": "Betta Smaragdina",
     "scientific": "Betta smaragdina",
     "info": "Known for strong emerald scaling and northern Thai distribution.",
     "habitat": "Seasonal pools and rice fields.",
@@ -79,15 +79,15 @@
     "redlist": "Least Concern",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/smaragdina.webp",
         "caption": "Wild smaragdina male"
       }
     ]
   },
   {
     "slug": "pugnax",
-    "group": "pugnax group",
-    "name": "Betta pugnax",
+    "group": "Pugnax",
+    "name": "Betta Pugnax",
     "scientific": "Betta pugnax",
     "info": "Classic paternal mouthbrooder widely distributed in Peninsular Malaysia.",
     "habitat": "Forest streams and hill waters.",
@@ -96,15 +96,15 @@
     "redlist": "Least Concern",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/pugnax.webp",
         "caption": "Male pugnax"
       }
     ]
   },
   {
     "slug": "albimarginata",
-    "group": "albimarginata group",
-    "name": "Betta albimarginata",
+    "group": "Albimarginata",
+    "name": "Betta Albimarginata",
     "scientific": "Betta albimarginata",
     "info": "Tiny mouthbrooder with distinctive white fin margins.",
     "habitat": "Forest pools and leaf litter streams.",
@@ -113,15 +113,15 @@
     "redlist": "Least Concern",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/albimarginata.webp",
         "caption": "Male albimarginata"
       }
     ]
   },
   {
     "slug": "macrostoma",
-    "group": "unimaculata group",
-    "name": "Betta macrostoma",
+    "group": "Unimaculata",
+    "name": "Betta Macrostoma",
     "scientific": "Betta macrostoma",
     "info": "Large regal mouthbrooder endemic to Brunei.",
     "habitat": "Clear forest streams.",
@@ -130,15 +130,15 @@
     "redlist": "Vulnerable",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/macrostoma.webp",
         "caption": "Male macrostoma"
       }
     ]
   },
   {
     "slug": "coccina",
-    "group": "coccina group",
-    "name": "Betta coccina",
+    "group": "Coccina",
+    "name": "Betta Coccina",
     "scientific": "Betta coccina",
     "info": "Small red peat swamp species, highly iconic among blackwater bettas.",
     "habitat": "Peat swamp forests.",
@@ -147,15 +147,15 @@
     "redlist": "Near Threatened",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/coccina.webp",
         "caption": "Male coccina"
       }
     ]
   },
   {
     "slug": "persephone",
-    "group": "coccina group",
-    "name": "Betta persephone",
+    "group": "Coccina",
+    "name": "Betta Persephone",
     "scientific": "Betta persephone",
     "info": "Dark miniature peat swamp specialist from Johor.",
     "habitat": "Acidic peat swamps.",
@@ -164,7 +164,7 @@
     "redlist": "Critically Endangered",
     "photos": [
       {
-        "src": "YOUR_IMAGE_URL",
+        "src": "https://raw.githubusercontent.com/h6mzy/betta-gohtmx/main/static/img/persephone.webp",
         "caption": "Male persephone"
       }
     ]
